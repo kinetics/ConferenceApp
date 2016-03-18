@@ -1,0 +1,20 @@
+<div class="modal feedbackModal transparent">
+  <ion-header-bar class="bar-calm">
+    <h1 class="title">Twitter Post</h1>
+    <div class="button button-clear" ng-click="postTweetModal.hide()"><span class="icon ion-close"></span></div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-item>@connect_js</ion-item>
+    <label class="item item-input">
+      <textarea ng-model="formData.message"></textarea>
+    </label>
+    <ion-footer-bar align-title="left" class="bar-stable">
+      <div class="buttons">
+        <button class="button button-positive" ng-click="clear()">Clear</button>
+      </div>
+      <h1 class="title">{{128 - formData.message.length}} Chars</h1>
+      <button ng-click="doTweet(formData.message)" class="button button-positive">Post</button>
+    </ion-footer-bar>
+  </ion-content>
+</div>
+

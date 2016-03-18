@@ -1,0 +1,26 @@
+<a class="modal image-modal transparent" on-swipe-down="closeModal()">
+  <ion-nav-bar class="bar-clear">
+    <ion-nav-buttons side="right">
+      <button class="button button-clear ion-close" ng-click="closeModal()" ></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="activeSlide">
+    <ion-slide ng-repeat="tweet in tweets">
+
+      <ion-scroll direction="xy" scrollbar-x="false" scrollbar-y="false"
+                  min-zoom="{{zoomMin}}" style="width: 100%; height: 100%"
+                  delegate-handle="scrollHandle{{$index}}" on-scroll="updateSlideStatus(activeSlide)" on-release="updateSlideStatus(activeSlide)">
+      <br><br><br>
+
+      <div class="item">
+        <img ng-src="{{ tweet.user.profile_image_url }}">
+        <h2>{{ tweet.user.name }}</h2>
+        <small>@{{ tweet.user.screen_name }}</small>
+        <small class="time"> {{ tweet.created_at | formatTwitterDate}}</small>
+        <p compile="tweet.text | formatTwitterText"></p>
+      </div>
+
+      </ion-scroll>
+    </ion-slide>
+  </ion-slide-box>
+</a>

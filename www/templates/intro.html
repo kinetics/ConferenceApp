@@ -1,0 +1,26 @@
+<ion-view left-buttons="leftButtons" right-buttons="rightButtons">
+<link href="css/intro.css" rel="stylesheet">
+  <ion-nav-bar>
+
+    <ion-nav-buttons side="right">
+      <button class="button button-clear button-calm" menu-toggle="left" ng-click="goToDash()">  Skip</button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+          <ion-slide>
+            <h3>Thank you for using the ConnectJS Mobile Application!</h3>
+            <h4>
+              About this app:
+            </h4>
+            <p>
+              The technologies being used for this application are: Ionic Framework, AngularJS, Cordova, NodeJS, ExpressJS, and PostgreSql.
+              <br><br>
+              Thank you to Icon8 for the awesome Icon Images used on the Navigation page. <a href="https://icons8.com">Icon pack by Icons8.</a>
+            </p>
+
+          </ion-slide>
+        </ion-slide-box>
+
+      </ion-view>

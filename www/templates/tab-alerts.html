@@ -1,0 +1,14 @@
+<ion-view title="Alerts">
+  <ion-content>
+
+      <div class="card" collection-repeat="item in alerts | orderBy:item.notificationid:true">
+        <div class="item item-divider item-calm">
+            {{item.notificationtitle}}
+          </div>
+          <div class="item item-text-wrap">
+            {{item.notificationmessage}}
+          </div>
+          <br>
+      </div>
+  </ion-content>
+</ion-view>

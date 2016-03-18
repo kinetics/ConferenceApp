@@ -1,0 +1,40 @@
+<ion-view title="Networking">
+  <ion-content class="has-header">
+
+      <div class="list card" collection-repeat="item in contacts">
+        <ion-item href="#" class="item-icon-left">
+          <i class="icon ion-person"></i>
+          {{item.Name}}
+        </ion-item>
+        <ion-item href="#" class="item-icon-left">
+          <i class="icon ion-email"></i>
+          {{item.Email}}
+        </ion-item>
+        <br>
+      </div>
+
+
+  </ion-content>
+</ion-view>
+
+<ion-tabs class="tabs-calm tabs-icon-top">
+
+  <ion-tab title="QR Scan" icon-on="ion-qr-scanner" icon-off="ion-qr-scanner" ng-click="scan()">
+    <!-- Tab 2 content -->
+  </ion-tab>
+
+  <ion-tab title="Contacts" icon-on="ion-android-contacts" icon-off="ion-android-contacts">
+    <!-- Tab 3 content -->
+  </ion-tab>
+
+  <ion-tab title="Export" icon-on="ion-paper-airplane" icon-off="ion-paper-airplane" ng-click="emailContactDetails()">
+
+  </ion-tab>
+
+
+
+</ion-tabs>
+
+
+
+

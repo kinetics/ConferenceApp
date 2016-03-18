@@ -1,0 +1,31 @@
+<ion-view title="{{profile.userName}}" cache-view="false">
+  <link href="../css/profile.css" rel="stylesheet">
+  <ion-content has-header="true">
+      <div id="profile-bg"></div>
+      <div id="content">
+        <div id="profile-info">
+          <img ng-if="profile.profileimage" id="profile-image" ng-src="{{profile.profileimage}}">
+          <img ng-if="!profile.profileimage" id="profile-image" src="templates/icons/icon.png">
+          <h3 id="profile-name">{{profile.firstname}} {{profile.lastname}}</h3>
+          <span id="profile-description">{{profile.description}}</span>
+        </div>
+      </div>
+
+      <h1>Sessions</h1>
+      <ion-list>
+        <ion-item ng-repeat="session in speakerSessions" class="item-button-right" ng-click="goToSession(session.sessionid)">
+          <p class="post-time">{{session.daydatetime}}, {{session.sessionTime}}</p>
+          <p>{{session.sessionname}}</p>
+          <p>{{session.sessiontrack}}</p>
+          <div class="post-options">
+            <i class="icon-reply"></i>
+            <i class="icon-shuffle"></i>
+          </div>
+          <button ng-if="!session.isAdded" class="button button-schedule button-icon icon ion-ios-plus" ng-click="addSession(session.sessionid, $event)"></button>
+          <button ng-if="session.isAdded" class="button button-schedule button-icon icon ion-ios-checkmark calm" ng-click="removeSession(session.sessionid, $event)"></button>
+        </ion-item>
+      </ion-list>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-view title="Settings and Updates">
+  <ion-content class="has-header">
+    <!--
+    <ul class="list">
+      <li class="item item-toggle">
+        Push Notifications
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="settings.switch1">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+    </ul>
+    -->
+    <button class="button button-primary button-block " ng-click="checkForUpdates()">
+      Check for App updates
+    </button>
+    <button class="button button-stable button-block button-pulse" ng-if="hasUpdate" ng-click="doUpdate()">
+      download update
+    </button>
+    <button class="button button-primary button-block " ng-click="updateAppData()">
+      Sync App Data.
+    </button>
+
+
+
+
+  </ion-content>
+
+</ion-view>

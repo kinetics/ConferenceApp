@@ -1,0 +1,21 @@
+<ion-view>
+  <ion-nav-title>
+    <a  ng-click="openPopover($event)">
+      {{syncItem}} <i class="ion-android-arrow-dropdown"></i>
+    </a>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icn ion-compose" ng-click="postNewTweet()"></a>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+      <a class="item item-avatar" collection-repeat="tweet in tweets" ng-click="showTweet($index)">
+        <img ng-src="{{ tweet.user.profile_image_url }}">
+        <h2>{{ tweet.user.name }}</h2>
+        <small>@{{ tweet.user.screen_name }}</small>
+        <small class="time"> {{ tweet.created_at | formatTwitterDate}}</small>
+        <p compile="tweet.text | formatTwitterText"></p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

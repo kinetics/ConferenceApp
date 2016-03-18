@@ -1,0 +1,29 @@
+<ion-view view-title="Sponsors">
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-android-search" ng-click="showSearch()"></a>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <!-- Search Filter -->
+    <div class="bar item-input-inset" ng-show="search">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="searchText">
+      </label>
+      <button class="button button-clear" ng-click="hideSearch()">
+        Cancel
+      </button>
+    </div>
+    <!-- End Search Filter -->
+
+
+    <ion-list>
+      <a class="item item-avatar item-button-right" collection-repeat="item in sponsors | filter:searchText" href="#/tab/{{item.sponsorID}}">
+        <img src="templates/venkman.jpg">
+        <h2>{{item.sponsorname}}</h2>
+        <p>{{item.sponsordescription}}</p>
+        <button class="button button-icon icon ion-chevron-right"></button>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>

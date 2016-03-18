@@ -1,0 +1,24 @@
+<ion-view title="Maps">
+  <ion-pane>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Devdactic Image Gallery</h1>
+  </ion-header-bar>
+  <ion-content class="has-header padding" >
+  <br><br>
+
+  <div class="item item-divider">
+    <i class="ion-images"></i>
+    Maps of facility.
+  </div>
+
+
+  <a class="item item-list-detail">    
+      <ion-item ng-repeat="image in allImages">
+        <img   ng-src="{{image.src}}" ng-click="showImages($index)" style="text-aligh:center" class="image-list-thumb"/>
+      </ion-item>
+  </a>
+
+
+</ion-content>
+</ion-pane>
+</ion-view>

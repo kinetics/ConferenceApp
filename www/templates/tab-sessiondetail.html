@@ -1,0 +1,43 @@
+<ion-view title="Session Details" cache-view="false">
+  <link href="css/profile.css" rel="stylesheet">
+  <ion-content has-header="true">
+    <div id="profile-bg"></div>
+    <div id="content">
+      <div id="profile-info">
+        <h4>{{session.sessionname}}</h4>
+
+        <div class="list card">
+          <a class="item item-icon-left calm" href="#">
+            <i class="icon ion-person"></i> {{session.speakerfirstname}} {{session.speakerlastname}}
+          </a>
+          <a class="item item-icon-left calm" href="#">
+            <i class="icon ion-ios-location"></i> {{session.roomname}}
+          </a>
+          <a class="item item-icon-left calm" href="#">
+            <i class="icon ion-calendar"></i> {{session.daydatetime}}
+          </a>
+          <a class="item item-icon-left calm" href="#">
+            <i class="icon ion-clock"></i> {{session.sessionTime}}
+          </a>
+          <div class="item item-body">
+            <p>
+            {{session.sessiondescription}}
+            </p>
+          </div>
+        <!--<span id="profile-description">{{profile.description}}</span>-->
+      </div>
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>
+<div class="bar bar-footer bar-calm" ng-if="session.isAdded">
+  <div class="button-bar">
+    <a class="button button-small button-clear"  ng-click="removeSession(session.sessionid)"><i class="icon ion-ios-checkmark"></i> Remove From My Schedule</a>
+  </div>
+</div>
+<div class="bar bar-footer bar-stable" ng-if="!session.isAdded">
+  <div class="button-bar">
+    <a class="button button-small button-clear button-calm" ng-click="addSession(session.sessionid)"><i class="icon ion-ios-plus-outline"></i> Add To My Schedule</a>
+  </div>
+</div>
